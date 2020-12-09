@@ -1,0 +1,23 @@
+name: d8-sandbox
+recipe: drupal8
+config:
+  php: '7.4'
+  via: apache:2.4
+  webroot: web
+  database: mysql:5.7
+  drush: ^9
+  xdebug: false
+  drupal: true
+  config:
+    database: drupal8
+    username: drupal8
+    password: drupal8
+    host: database
+    port: 3306
+services:
+  appserver:
+    build:
+      - composer install
+tooling:
+  drush:
+    cmd: vendor/bin/drush
