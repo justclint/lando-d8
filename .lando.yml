@@ -16,7 +16,7 @@ config:
     port: 3306
 proxy:
   adminer:
-    - adminer.d8-sandbox.lndo.site    
+    - adminer.d8-sandbox.lndo.site
 services:
   appserver:
     build:
@@ -26,7 +26,10 @@ services:
     services:
       image: dehy/adminer
       command: /bin/s6-svscan /etc/services.d
-    portforward: true      
+    portforward: true
+events:
+  post-start:
+    - /bin/bash /app/scripts/drupal-install.sh
 tooling:
   drush:
     cmd: vendor/bin/drush
