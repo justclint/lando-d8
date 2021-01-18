@@ -8,11 +8,11 @@ box/local.config.yml
 *.local
 local.blt.yml
 
-# Ignore drupal core.
-web/core
-
 # Ignore Lando Drupal8 recipe.
 drupal8
+
+# Ignore drupal core.
+web/core
 
 # Ignore paths that contain user-generated content.
 web/sites/*/files
