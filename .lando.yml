@@ -14,10 +14,19 @@ config:
     password: drupal8
     host: database
     port: 3306
+proxy:
+  adminer:
+    - adminer.d8-sandbox.lndo.site    
 services:
   appserver:
     build:
       - composer install
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    portforward: true      
 tooling:
   drush:
     cmd: vendor/bin/drush
