@@ -21,6 +21,7 @@
         "drupal/core-vendor-hardening": "^8.8"
     },
     "require-dev": {
+        "drupal/console": "~1.0",
         "drupal/devel": "^2.0",
         "drush/drush": "^9.2"
     },
